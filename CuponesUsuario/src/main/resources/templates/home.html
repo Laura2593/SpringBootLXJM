@@ -1,0 +1,41 @@
+  <!DOCTYPE>
+  <html xmlns:th="http://www.thymeleaf.org">
+  <head
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <body>
+  <div  class="nav justify-content-center">
+  <h1 class="nav-link active" aria-current="page" href="#">Usuarios </h1>
+  </div>
+  <div class="container">
+        <td> <a th:href="@{/usuarios/create}" class="btn btn-primary"> Nuevo </a></td>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos </th>
+        <th scope="col">Correo Electronico</th>
+        <th scope="col">Contrase&ntilde;a</th>
+        <th scope="col">Usuario Referido</th>
+        <th scope="col">Accion</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="usuarios:${usuarios}">
+        <td scope="row" th:text="${usuarios.nombre}"></td>
+        <td scope="row" th:text="${usuarios.apellidos}"></td>
+        <td scope="row" th:text="${usuarios.correo}"></td>
+        <td scope="row" th:text="${usuarios.password}"></td>
+        <td scope="row" th:text="${usuarios.nombreReferido}"></td>
+        <td> <a href="" class="btn btn-warning disabled"> Editar </a></td>
+        <td> <a href="" class="btn btn-danger disabled"> Eliminar </a></td>
+      </tr>
+     </tbody>
+  </table>
+  </div>
+  </body>
+  </html>
